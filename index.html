@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARK'AY</title>
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Custom styles for the video background */
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    /* Custom style for the countdown text */
+    #countdown {
+      font-family: 'Montserrat', sans-serif;
+      color: #FF0000;
+    }
+  </style>
+</head>
+<body class="relative min-h-screen overflow-hidden bg-gray-900">
+  <!-- Video Background -->
+  <video autoplay muted loop playsinline preload="auto" class="bg-video">
+    <source src="Topographic Textures _ Topographic Map _ Animated Background _⚡FREE Download.mp4" type="video/webm">
+    <source src="Topographic Textures _ Topographic Map _ Animated Background _⚡FREE Download.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Main Container -->
+  <div class="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
+    <!-- Logo -->
+    <img src="logi.png" alt="Logo" class="w-32 mb-8">
+
+    <!-- Waitlist Form Card -->
+    <div class="bg-white bg-opacity-80 rounded-lg p-6 max-w-md w-full shadow-lg">
+      <!-- Toggle Button -->
+      <button id="toggleForm" class="w-full bg-gray-800 text-white py-2 px-4 rounded mb-4 hover:bg-gray-700 transition duration-300">
+        JOIN WAITLIST
+      </button>
+      
+      <!-- Waitlist Form (initially hidden) -->
+      <form id="waitlistForm" action="waitlist.php" method="POST" class="hidden flex flex-col space-y-4">
+        <input type="text" name="name" placeholder="Name" required class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="email" name="email" placeholder="E-Mail" required class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="text" name="phone" placeholder="Phone Number" class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition duration-300">
+          COUNT ME IN
+        </button>
+      </form>
+    </div>
+
+    <!-- Countdown Timer -->
+    <div id="countdown" class="mt-8 flex space-x-4 text-xl font-semibold">
+      <div class="flex flex-col items-center">
+        <span id="days">05</span>
+        <span class="text-sm">Days</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span id="hours">00</span>
+        <span class="text-sm">Hours</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span id="minutes">00</span>
+        <span class="text-sm">Minutes</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span id="seconds">00</span>
+        <span class="text-sm">Seconds</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Set the target date to 5 days from page load
+    const targetDate = new Date(Date.now() + 5 * 24 * 60 * 60 * 1000);
+
+    const countdown = () => {
+      const now = new Date();
+      const diff = targetDate.getTime() - now.getTime();
+
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = "<div class='text-white text-2xl'>We've Launched!</div>";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days.toString().padStart(2, '0');
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    };
+
+    countdown();
+    setInterval(countdown, 1000);
+
+    // Toggle the visibility of the waitlist form
+    document.getElementById('toggleForm').addEventListener('click', function() {
+      const form = document.getElementById('waitlistForm');
+      form.classList.toggle('hidden');
+    });
+
+    // Ensure video autoplay on mobile devices
+    document.addEventListener("DOMContentLoaded", function () {
+      let video = document.querySelector(".bg-video");
+      video.play().catch(error => console.log("Autoplay blocked:", error));
+    });
+  </script>
+</body>
+</html>
