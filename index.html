@@ -1,123 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ARK'AY</title>
-  <!-- Tailwind CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <!-- Google Fonts: Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="logo.png" type="image/png" sizes="32x32" />
-  <style>
-    /* Custom styles for the video background */
-    .bg-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-    /* Custom style for the countdown text */
-    #countdown {
-      font-family: 'Montserrat', sans-serif;
-      color: #FF0000;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANDERITAX | Limited Edition</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="relative min-h-screen overflow-hidden bg-gray-900">
-  <!-- Video Background -->
-  <video autoplay muted loop playsinline preload="auto" class="bg-video">
-    <source src="Topographic Textures _ Topographic Map _ Animated Background _⚡FREE Download.mp4" type="video/webm">
-    <source src="Topographic Textures _ Topographic Map _ Animated Background _⚡FREE Download.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<body>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container-fluid h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="hero-content">
+                        <h1 class="hero-title glitch-effect" data-text="BANDERITAX">BANDERITAX</h1>
+                        <p class="hero-subtitle animate-fade-in">LIMITED EDITION</p>
+                        <p class="hero-description animate-fade-in-delay">Experience the future of premium technology</p>
+                        <div class="hero-actions animate-fade-in-delay-2">
+                            <a href="#product" class="btn-primary-glow">
+                                <span>SHOP NOW</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
 
-  <!-- Main Container -->
-  <div class="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
-    <!-- Logo -->
-    <img src="logi.png" alt="Logo" class="w-32 mb-8">
+    <!-- Featured Images Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title text-center fade-in-scroll">FEATURED COLLECTION</h2>
+                </div>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-lg-6 fade-in-scroll">
+                    <div class="gallery-item">
+                        <img src="v1.jpg" alt="Product 1" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Premium Edition</h3>
+                                <p>Exclusive Design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in-scroll">
+                    <div class="gallery-item">
+                        <img src="logo.png" alt="Product 2" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <h3>Limited Series</h3>
+                                <p>Collectors Item</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Waitlist Form Card -->
-    <div class="bg-white bg-opacity-80 rounded-lg p-6 max-w-md w-full shadow-lg">
-      <!-- Toggle Button -->
-      <button id="toggleForm" class="w-full bg-gray-800 text-white py-2 px-4 rounded mb-4 hover:bg-gray-700 transition duration-300">
-        JOIN WAITLIST
-      </button>
-      
-      <!-- Waitlist Form (initially hidden) -->
-      <form id="waitlistForm" action="waitlist.php" method="POST" class="hidden flex flex-col space-y-4">
-        <input type="text" name="name" placeholder="Name" required class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <input type="email" name="email" placeholder="E-Mail" required class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <input type="text" name="phone" placeholder="Phone Number" class="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500 transition duration-300">
-          COUNT ME IN
-        </button>
-      </form>
-    </div>
+    <!-- Product Description Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 fade-in-scroll">
+                    <h2 class="section-title">REVOLUTIONARY DESIGN</h2>
+                    <p class="description-text">
+                        Crafted with precision and engineered for perfection, BANDERITAX represents the pinnacle of innovation. 
+                        Each piece is meticulously designed to deliver an unparalleled experience.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Premium Materials</li>
+                        <li><i class="fas fa-check"></i> Advanced Technology</li>
+                        <li><i class="fas fa-check"></i> Limited Production</li>
+                        <li><i class="fas fa-check"></i> Worldwide Shipping</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 fade-in-scroll">
+                    <div class="product-showcase">
+                        <div class="showcase-glow"></div>
+                        <img src="v1.jpg" alt="Product Showcase" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Countdown Timer -->
-    <div id="countdown" class="mt-8 flex space-x-4 text-xl font-semibold">
-      <div class="flex flex-col items-center">
-        <span id="days">05</span>
-        <span class="text-sm">Days</span>
-      </div>
-      <div class="flex flex-col items-center">
-        <span id="hours">00</span>
-        <span class="text-sm">Hours</span>
-      </div>
-      <div class="flex flex-col items-center">
-        <span id="minutes">00</span>
-        <span class="text-sm">Minutes</span>
-      </div>
-      <div class="flex flex-col items-center">
-        <span id="seconds">00</span>
-        <span class="text-sm">Seconds</span>
-      </div>
-    </div>
-  </div>
+    <!-- Featured Product Section -->
+    <section id="product" class="product-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="product-card fade-in-scroll">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="product-image">
+                                    <img src="v1.jpg" alt="BANDERITAX Premium" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-info">
+                                    <h3 class="product-name">BANDERITAX PREMIUM</h3>
+                                    <p class="product-subtitle">Limited Edition Series</p>
+                                    <div class="price-section">
+                                        <span class="old-price">$299.99</span>
+                                        <span class="current-price">$199.99</span>
+                                        <span class="discount-badge">33% OFF</span>
+                                    </div>
+                                    <p class="product-description">
+                                        The ultimate expression of modern design and cutting-edge technology. 
+                                        Only 100 pieces available worldwide.
+                                    </p>
+                                    <div class="product-actions">
+                                        <button class="btn-buy-now">
+                                            <span>BUY NOW</span>
+                                            <div class="btn-glow"></div>
+                                        </button>
+                                        <div class="stock-indicator">
+                                            <span class="stock-text">Only 23 left in stock</span>
+                                            <div class="stock-bar">
+                                                <div class="stock-fill"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- JavaScript -->
-  <script>
-    // Set the target date to 5 days from page load
-    const targetDate = new Date(Date.now() + 5 * 24 * 60 * 60 * 1000);
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 fade-in-scroll">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="10000">0</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 fade-in-scroll">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="50">0</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 fade-in-scroll">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="99">0</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 fade-in-scroll">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="24">0</div>
+                        <div class="stat-label">Support Hours</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    const countdown = () => {
-      const now = new Date();
-      const diff = targetDate.getTime() - now.getTime();
-
-      if (diff <= 0) {
-        document.getElementById('countdown').innerHTML = "<div class='text-white text-2xl'>We've Launched!</div>";
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      document.getElementById('days').textContent = days.toString().padStart(2, '0');
-      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-    };
-
-    countdown();
-    setInterval(countdown, 1000);
-
-    // Toggle the visibility of the waitlist form
-    document.getElementById('toggleForm').addEventListener('click', function() {
-      const form = document.getElementById('waitlistForm');
-      form.classList.toggle('hidden');
-    });
-
-    // Ensure video autoplay on mobile devices
-    document.addEventListener("DOMContentLoaded", function () {
-      let video = document.querySelector(".bg-video");
-      video.play().catch(error => console.log("Autoplay blocked:", error));
-    });
-  </script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
