@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique - Sorin</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="sorin-styles.css">
+    <link rel="stylesheet" href="sorin-shop-styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="sorin-homepage.html">
+                <span class="brand-name">SORIN</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="sorin-homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sorin-homepage.html#collection">Collection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sorin-homepage.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="sorin-shop.html">Boutique</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sorin-homepage.html#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-icon" href="#"><i class="fas fa-shopping-bag"></i> <span class="cart-count">0</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="sorin-homepage.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Boutique</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Shop Header -->
+    <section class="shop-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="shop-title">Luxury Boutique</h1>
+                    <p class="shop-subtitle">Discover our exclusive collection of premium fashion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Content -->
+    <section class="shop-content">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-3 col-md-4">
+                    <div class="shop-sidebar">
+                        <div class="filter-section">
+                            <h4 class="filter-title">Categories</h4>
+                            <div class="filter-options">
+                                <div class="filter-option">
+                                    <input type="radio" id="all" name="category" value="all" checked>
+                                    <label for="all">All Items</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="radio" id="womens" name="category" value="womens">
+                                    <label for="womens">Women's</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="radio" id="mens" name="category" value="mens">
+                                    <label for="mens">Men's</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="radio" id="accessories" name="category" value="accessories">
+                                    <label for="accessories">Accessories</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h4 class="filter-title">Price Range</h4>
+                            <div class="filter-options">
+                                <div class="filter-option">
+                                    <input type="checkbox" id="price1" value="0-1000">
+                                    <label for="price1">Under $1,000</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="price2" value="1000-3000">
+                                    <label for="price2">$1,000 - $3,000</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="price3" value="3000-5000">
+                                    <label for="price3">$3,000 - $5,000</label>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="price4" value="5000+">
+                                    <label for="price4">$5,000+</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h4 class="filter-title">Sort By</h4>
+                            <select class="form-select sort-select">
+                                <option value="featured">Featured</option>
+                                <option value="newest">Newest</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="name">Name: A to Z</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="col-lg-9 col-md-8">
+                    <div class="shop-results">
+                        <div class="results-header">
+                            <p class="results-count">Showing <span id="product-count">18</span> products</p>
+                        </div>
+
+                        <div class="products-grid" id="products-grid">
+                            <!-- Women's Products -->
+                            <div class="product-item" data-category="womens" data-price="2450">
+                                <div class="product-card-shop">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Midnight Elegance Dress" class="img-fluid">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-outline-light quick-view" data-bs-toggle="modal" data-bs-target="#productModal">Quick View</button>
+                                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                                        </div>
+                                        <div class="product-badges">
+                                            <span class="badge badge-new">New</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Midnight Elegance Dress</h3>
+                                        <p class="product-description">Timeless sophistication in premium silk</p>
+                                        <p class="product-price">$2,450</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-item" data-category="womens" data-price="3850">
+                                <div class="product-card-shop">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Heritage Cashmere Coat" class="img-fluid">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-outline-light quick-view">Quick View</button>
+                                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Heritage Cashmere Coat</h3>
+                                        <p class="product-description">Luxurious warmth meets modern design</p>
+                                        <p class="product-price">$3,850</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-item" data-category="womens" data-price="2200">
+                                <div class="product-card-shop">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Silk Evening Gown" class="img-fluid">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-outline-light quick-view">Quick View</button>
+                                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Silk Evening Gown</h3>
+                                        <p class="product-description">Elegant eveningwear for special occasions</p>
+                                        <p class="product-price">$2,200</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Men's Products -->
+                            <div class="product-item" data-category="mens" data-price="4200">
+                                <div class="product-card-shop">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Executive Tailored Suit" class="img-fluid">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-outline-light quick-view">Quick View</button>
+                                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                                        </div>
+                                        <div class="product-badges">
+                                            <span class="badge badge-bestseller">Bestseller</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Executive Tailored Suit</h3>
+                                        <p class="product-description">Precision craftsmanship in Italian wool</p>
+                                        <p class="product-price">$4,200</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-item" data-category="mens" data-price="1850">
+                                <div class="product-card-shop">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1506629905877-c19d4ac54b84?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Blazer" class="img-fluid">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-outline-light quick-view">Quick View</button>
+                                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Luxury Blazer</h3>
+                                        <p class="product-description">Sophisticated style for modern gentlemen</p>
+                                        <p class="product-price">$1,850</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-item" data-category="mens" data-price="950">
+                                <div class="product-card-shop">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1571945153237-4929e783af4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Premium Dress Shirt" class="img-fluid">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-outline-light quick-view">Quick View</button>
+                                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Premium Dress Shirt</h3>
+                                        <p class="product-description">Finest cotton with impeccable fit</p>
+                                        <p class="product-price">$950</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Accessories -->
+                            <div class="product-item" data-category="accessories" data-price="1950">
+                                <div class="product-card-shop">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1551803091-e20673f15770?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Artisan Leather Handbag" class="img-fluid">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-outline-light quick-view">Quick View</button>
+                                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Artisan Leather Handbag</h3>
+                                        <p class="product-description">Hand-crafted with finest Italian leather</p>
+                                        <p class="product-price">$1,950</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-item" data-category="accessories" data-price="650">
+                                <div class="product-card-shop">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Signature Silk Scarf" class="img-fluid">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-outline-light quick-view">Quick View</button>
+                                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Signature Silk Scarf</h3>
+                                        <p class="product-description">Elegant accessory with exclusive print</p>
+                                        <p class="product-price">$650</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-item" data-category="accessories" data-price="5200">
+                                <div class="product-card-shop">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1581338834647-b0fb40704e21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Precision Timepiece" class="img-fluid">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-outline-light quick-view">Quick View</button>
+                                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                                        </div>
+                                        <div class="product-badges">
+                                            <span class="badge badge-luxury">Luxury</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Precision Timepiece</h3>
+                                        <p class="product-description">Swiss movement with gold accents</p>
+                                        <p class="product-price">$5,200</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Products -->
+                            <div class="product-item" data-category="womens" data-price="1450">
+                                <div class="product-card-shop">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Designer Blouse" class="img-fluid">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-outline-light quick-view">Quick View</button>
+                                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Designer Blouse</h3>
+                                        <p class="product-description">Refined elegance for everyday luxury</p>
+                                        <p class="product-price">$1,450</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-item" data-category="mens" data-price="3200">
+                                <div class="product-card-shop">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cashmere Overcoat" class="img-fluid">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-outline-light quick-view">Quick View</button>
+                                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Cashmere Overcoat</h3>
+                                        <p class="product-description">Ultimate luxury for winter sophistication</p>
+                                        <p class="product-price">$3,200</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-item" data-category="accessories" data-price="850">
+                                <div class="product-card-shop">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Leather Wallet" class="img-fluid">
+                                        <div class="product-overlay">
+                                            <button class="btn btn-outline-light quick-view">Quick View</button>
+                                            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-name">Leather Wallet</h3>
+                                        <p class="product-description">Handcrafted from premium leather</p>
+                                        <p class="product-price">$850</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <nav aria-label="Products pagination" class="mt-5">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h3 class="footer-brand">SORIN</h3>
+                    <p class="footer-text">Crafting luxury fashion with uncompromising quality and timeless elegance.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 mb-4">
+                    <h4 class="footer-title">Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Women's</a></li>
+                        <li><a href="#">Men's</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 mb-4">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Avenue, New York, NY 10001</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> hello@sorin.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="copyright">&copy; 2024 Sorin. All rights reserved. | Privacy Policy | Terms of Service</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="sorin-script.js"></script>
+</body>
+</html>
