@@ -1,3 +1,78 @@
+## Startup Idea Analyzer – MVP
+
+This MVP reads a startup idea and generates:
+
+- Summary (3 sentences)
+- Market analysis (size, competitors, opportunities, risks)
+- Business Model Canvas
+- 5-step marketing strategy
+- Viability/investment score (0–100)
+
+### Tech stack
+- Python 3.10+
+- google-generativeai (Gemini)
+- pydantic, pandas, scikit-learn
+- transformers (optional local summarization)
+- fpdf2 (PDF export)
+
+### Setup
+1) Create a Google Cloud project and enable the Gemini API.
+2) Get your API key and set it as an environment variable:
+
+```bash
+export GOOGLE_API_KEY="your_api_key_here"
+```
+
+3) Install dependencies:
+
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Optionally, create a `.env` file with:
+
+```bash
+GOOGLE_API_KEY=your_api_key_here
+```
+
+### Usage
+
+Basic (JSON output):
+
+```bash
+python mvp_ai.py \
+  --idea "Plateforme d'apprentissage personnalisée alimentée par l'IA pour les PME" \
+  --output json \
+  --outdir ./outputs
+```
+
+From a file and export PDF too:
+
+```bash
+python mvp_ai.py \
+  --idea-file ./example_idea.txt \
+  --output both \
+  --outdir ./outputs \
+  --language fr
+```
+
+Use a different Gemini model:
+
+```bash
+python mvp_ai.py --model gemini-1.5-pro
+```
+
+Disable local summarizer (uses Gemini only):
+
+```bash
+python mvp_ai.py --no-local-summarizer
+```
+
+### Notes
+- Local summarization via `transformers` is optional and may download a small model on first run.
+- If `GOOGLE_API_KEY` is not set, the script will exit with an error.
+- Default output directory is `./outputs`.
 # SORIN - Luxury Clothing Brand Website
 
 A premium, elegant, and minimalist ecommerce website for the luxury clothing brand "Sorin" with a focus on timeless, high-end fashion.
