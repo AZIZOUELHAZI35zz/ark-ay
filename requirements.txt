@@ -1,0 +1,7 @@
+google-generativeai>=0.7.2
+pydantic>=2.8.2
+pandas>=2.2.2
+scikit-learn>=1.5.1
+fpdf2>=2.7.10
+python-dotenv>=1.0.1
+transformers>=4.44.2
