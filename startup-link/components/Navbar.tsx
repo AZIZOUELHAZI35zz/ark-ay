@@ -6,10 +6,10 @@ import { useEffect, useMemo, useState } from "react";
 import { LogIn, LogOut, MessageCircle, Search, UserRound } from "lucide-react";
 import Button from "@/components/Button";
 import { auth } from "@/lib/firebase";
-import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut, type User } from "firebase/auth";
 
 export default function Navbar() {
-  const [user, setUser] = useState<ReturnType<typeof auth.currentUser> | null>(null);
+  const [user, setUser] = useState<User | null>(auth.currentUser);
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (firebaseUser) => setUser(firebaseUser));
